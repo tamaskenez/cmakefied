@@ -6,7 +6,7 @@ set(phdrs ${root}/imgui.h)
 set(hdrs ${root}/stb_rect_pack.h ${root}/stb_textedit.h ${root}/stb_truetype.h
     ${root}/imgui_internal.h)
 set(srcs ${root}/imgui.cpp
-    ${root}/imgui_demo.cpp ${root}/imgui_draw.cpp ${root}/imgui_internal.cpp)
+    ${root}/imgui_demo.cpp ${root}/imgui_draw.cpp)
 
 add_library(imgui STATIC ${phdrs} ${hdrs} ${srcs})
 

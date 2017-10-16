@@ -41,7 +41,7 @@ gitit () {
         git pull --ff-only
         cd - >/dev/null
     fi
-    cp -R "$cmakefied_dir/$2"/* "$dir"
+    cp -Rv "$cmakefied_dir/$2"/* "$dir"
 }
 
 while [[ $# > 0 ]]; do
@@ -53,6 +53,12 @@ while [[ $# > 0 ]]; do
     case $1 in
         imgui)
             gitit "https://github.com/ocornut/imgui.git" $1
+            ;;
+        Box2D)
+            gitit "https://github.com/erincatto/Box2D.git" $1
+            ;;
+        glew)
+            gitit "https://github.com/tamaskenez/glew-with-extensions.git" $1
             ;;
         *)
             echo "Invalid package: $1" >&2
