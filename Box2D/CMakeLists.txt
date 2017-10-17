@@ -25,6 +25,7 @@ install(EXPORT Box2D-targets
     DESTINATION lib/cmake/Box2D)
 
 set(phdrs
+    "Box2D/Box2D.h"
     "Box2D/Common/b2Settings.h"
     "Box2D/Common/b2Draw.h"
     "Box2D/Common/b2Timer.h"
@@ -56,5 +57,6 @@ set(phdrs
 )
 
 foreach(h ${phdrs})
-    install(FILES "Box2D/${h}" DESTINATION "include/${h}")
+    get_filename_component(d "${h}" DIRECTORY)
+    install(FILES "Box2D/${h}" DESTINATION "include/${d}")
 endforeach()
