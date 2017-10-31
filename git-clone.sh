@@ -1,13 +1,16 @@
 #!/bin/bash -e
 #
+# git-clones the specified package and copies our CMake files into the clone.
+#
 # Usage:
 #
-#     git-clone.sh [--dir=<DIR>] [pkg-name]
+#     git-clone.sh [--dir=<DIR>] imgui|Box2D|combinations
 #
 # where
 #
-#     <DIR> is the the parent directory of the clone, default: parent dir of this repo
-#     <pkg-name> is imgui
+#     <DIR> is the the parent directory of the clone
+#     The default dir is the parent dir of this repo so the package's repo
+#     will be a sibling of the cmakefied directory.
 #
 
 cd "$(dirname $0)/.."
@@ -57,8 +60,8 @@ while [[ $# > 0 ]]; do
         Box2D)
             gitit "https://github.com/erincatto/Box2D.git" $1
             ;;
-        glew)
-            gitit "https://github.com/tamaskenez/glew-with-extensions.git" $1
+        combinations)
+            gitit "https://github.com/HowardHinnant/combinations.git" $1
             ;;
         *)
             echo "Invalid package: $1" >&2
