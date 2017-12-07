@@ -63,6 +63,9 @@ while [[ $# > 0 ]]; do
         combinations)
             gitit "https://github.com/HowardHinnant/combinations.git" $1
             ;;
+        eigen)
+            gitit "https://github.com/RLovelett/eigen.git" $1 "branches/3.3"
+            ;;
         *)
             echo "Invalid package: $1" >&2
             exit 1
