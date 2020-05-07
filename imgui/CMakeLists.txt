@@ -7,10 +7,10 @@ find_package(glew CONFIG)
 
 set(root ${CMAKE_CURRENT_SOURCE_DIR})
 set(phdrs ${root}/imgui.h)
-set(hdrs ${root}/stb_rect_pack.h ${root}/stb_textedit.h ${root}/stb_truetype.h
+set(hdrs ${root}/imstb_rectpack.h ${root}/imstb_textedit.h ${root}/imstb_truetype.h
     ${root}/imgui_internal.h)
 set(srcs ${root}/imgui.cpp
-    ${root}/imgui_demo.cpp ${root}/imgui_draw.cpp)
+    ${root}/imgui_demo.cpp ${root}/imgui_draw.cpp ${root}/imgui_widgets.cpp)
 
 add_library(imgui STATIC ${phdrs} ${hdrs} ${srcs})
 target_include_directories(imgui PUBLIC
@@ -35,7 +35,7 @@ if(glfw3_FOUND AND OPENGL_FOUND AND glew_FOUND)
     endforeach()
     set(modified_cpp "${CMAKE_CURRENT_BINARY_DIR}/imgui_impl_glfw_gl3-glew.cpp")
     file(WRITE "${modified_cpp}" "${cppcontent-glew}")
-    
+
     add_library(glfw-gl3-glew STATIC
         "${modified_cpp}"
         examples/opengl3_example/imgui_impl_glfw_gl3.h
