@@ -17,6 +17,7 @@ target_include_directories(imgui PUBLIC
     $<BUILD_INTERFACE:${root}>
     $<INSTALL_INTERFACE:include>)
 target_compile_definitions(imgui PUBLIC IMGUI_DISABLE_INCLUDE_IMCONFIG_H)
+set_target_properties(imgui PROPERTIES DEBUG_POSTFIX "d")
 
 set(targets imgui)
 set(headers_to_install ${phdrs})
