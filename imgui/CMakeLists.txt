@@ -10,7 +10,8 @@ set(phdrs ${root}/imgui.h)
 set(hdrs ${root}/imstb_rectpack.h ${root}/imstb_textedit.h ${root}/imstb_truetype.h
     ${root}/imgui_internal.h)
 set(srcs ${root}/imgui.cpp
-    ${root}/imgui_demo.cpp ${root}/imgui_draw.cpp ${root}/imgui_widgets.cpp)
+    ${root}/imgui_demo.cpp ${root}/imgui_draw.cpp ${root}/imgui_widgets.cpp
+    ${root}/imgui_tables.cpp)
 
 add_library(imgui STATIC ${phdrs} ${hdrs} ${srcs})
 target_include_directories(imgui PUBLIC
