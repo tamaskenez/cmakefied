@@ -41,9 +41,6 @@ if(glfw3_FOUND AND OPENGL_FOUND AND glew_FOUND)
     add_library(glfw-gl3-glew STATIC
         "${modified_cpp}"
         backends/imgui_impl_opengl3.h
-    )
-    add_library(glfw-gl3-glew STATIC
-        "${modified_cpp}"
         backends/imgui_impl_glfw.h
     )
     target_include_directories(glfw-gl3-glew PUBLIC
