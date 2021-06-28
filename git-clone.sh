@@ -13,11 +13,11 @@
 #     will be a sibling of the cmakefied directory.
 #
 
-cd "$(dirname $0)/.."
+cd "$(dirname "$0")/.."
 deps_dir=$PWD
 cd - >/dev/null
 
-cd "$(dirname $0)"
+cd "$(dirname "$0")"
 cmakefied_dir=$PWD
 cd - >/dev/null
 
@@ -47,7 +47,7 @@ gitit () {
     cp -Rv "$cmakefied_dir/$2"/* "$dir"
 }
 
-while [[ $# > 0 ]]; do
+while [[ $# -gt 0 ]]; do
     if [[ $1 =~ --dir=(.*) ]]; then
         deps_dir="${BASH_REMATCH[1]}"
         shift
@@ -55,16 +55,16 @@ while [[ $# > 0 ]]; do
     fi
     case $1 in
         imgui)
-            gitit "https://github.com/ocornut/imgui.git" $1
+            gitit "https://github.com/ocornut/imgui.git" "$1"
             ;;
         Box2D)
-            gitit "https://github.com/erincatto/Box2D.git" $1
+            gitit "https://github.com/erincatto/Box2D.git" "$1"
             ;;
         combinations)
-            gitit "https://github.com/HowardHinnant/combinations.git" $1
+            gitit "https://github.com/HowardHinnant/combinations.git" "$1"
             ;;
         eigen)
-            gitit "https://github.com/RLovelett/eigen.git" $1 "branches/3.3"
+            gitit "https://github.com/RLovelett/eigen.git" "$1" "branches/3.3"
             ;;
         *)
             echo "Invalid package: $1" >&2
