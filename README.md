@@ -1,5 +1,7 @@
 # CMakefied
 
+**Abandoned, I'm using https://github.com/tamaskenez/allthesmallthings now**
+
 CMake support for some 3rd-party libraries that I use.
 Instead of forking a library and adding CMake support in the fork (hard to maintain updates) this repo provides CMake files to other libraries without forking them.
 
